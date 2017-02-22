@@ -616,7 +616,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
   }
   AVSpeechUtterance *utterance =
       [AVSpeechUtterance speechUtteranceWithString:words];
-  utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
+  utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"pl-PL"];
   utterance.rate = 0.75 * AVSpeechUtteranceDefaultSpeechRate;
   [synth speakUtterance:utterance];
 }

@@ -29,6 +29,7 @@
 /* Begin PBXFileReference section */
 		320070451E5984990098DF98 /* retrained_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = retrained_labels.txt; sourceTree = "<group>"; };
 		320070481E598FA50098DF98 /* optimized_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = optimized_graph.pb; sourceTree = "<group>"; };
+		32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tensorflow.xcconfig; sourceTree = SOURCE_ROOT; };
 		591D3EC41CFF7F120059011C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC61CFF7F370059011C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC81CFF7F500059011C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
@@ -133,6 +134,7 @@
 				592FF90118ECC66200C164F8 /* main.mm */,
 				591D3ED31CFF85FD0059011C /* tensorflow_utils.mm */,
 				591D3ED41CFF85FD0059011C /* tensorflow_utils.h */,
+				32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */,
 			);
 			name = CameraExample;
 			path = SimpleExample;
@@ -252,6 +254,7 @@
 		};
 		592FF8DF18ECBD7600C164F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -290,22 +293,22 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../makefile/gen/proto",
-					"$(SRCROOT)/../../makefile/downloads/eigen",
-					"$(SRCROOT)/../../makefile/downloads",
-					"$(SRCROOT)/../../makefile/downloads/protobuf/src/",
-					"$(SRCROOT)/../../../..",
+					"$(MAKEFILEROOT)/gen/proto",
+					"$(MAKEFILEROOT)/downloads/eigen",
+					"$(MAKEFILEROOT)/downloads",
+					"$(MAKEFILEROOT)/downloads/protobuf/src/",
+					"$(TENSORFLOWROOT)/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/../../makefile/gen/lib",
-					"$(SRCROOT)/../../makefile/gen/protobuf_ios/lib",
+					"$(MAKEFILEROOT)/gen/lib",
+					"$(MAKEFILEROOT)/gen/protobuf_ios/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"$(SRCROOT)/../../makefile/gen/lib/libtensorflow-core.a",
+					"$(MAKEFILEROOT)/gen/lib/libtensorflow-core.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.CameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -318,6 +321,7 @@
 		};
 		592FF8E018ECBD7600C164F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -350,22 +354,22 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../makefile/gen/proto",
-					"$(SRCROOT)/../../makefile/downloads/eigen",
-					"$(SRCROOT)/../../makefile/downloads",
-					"$(SRCROOT)/../../makefile/downloads/protobuf/src/",
-					"$(SRCROOT)/../../../..",
+					"$(MAKEFILEROOT)/gen/proto",
+					"$(MAKEFILEROOT)/downloads/eigen",
+					"$(MAKEFILEROOT)/downloads",
+					"$(MAKEFILEROOT)/downloads/protobuf/src/",
+					"$(TENSORFLOWROOT)/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/../../makefile/gen/lib",
-					"$(SRCROOT)/../../makefile/gen/protobuf_ios/lib",
+					"$(MAKEFILEROOT)/gen/lib",
+					"$(MAKEFILEROOT)/gen/protobuf_ios/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"$(SRCROOT)/../../makefile/gen/lib/libtensorflow-core.a",
+					"$(MAKEFILEROOT)/gen/lib/libtensorflow-core.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.CameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

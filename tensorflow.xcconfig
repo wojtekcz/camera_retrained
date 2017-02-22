@@ -1,0 +1,9 @@
+//
+//  tensorflow.xcconfig
+//  camera_example
+//
+//  Created by Wojciech Czarnowski on 2/21/17.
+//
+//
+TENSORFLOWROOT=/Users/wcz/technologies/tensorflow
+MAKEFILEROOT=$TENSORFLOWROOT/tensorflow/contrib/makefile

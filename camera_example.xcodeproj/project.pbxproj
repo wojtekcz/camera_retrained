@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320070471E5984990098DF98 /* retrained_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 320070451E5984990098DF98 /* retrained_labels.txt */; };
-		320070491E598FEF0098DF98 /* optimized_graph.pb in Resources */ = {isa = PBXBuildFile; fileRef = 320070481E598FA50098DF98 /* optimized_graph.pb */; };
+		3209A6BF1E5D2BD10045A1EF /* mmapped_graph.pb in Resources */ = {isa = PBXBuildFile; fileRef = 3209A6BE1E5D2BD10045A1EF /* mmapped_graph.pb */; };
 		591D3EC51CFF7F130059011C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3EC41CFF7F120059011C /* AVFoundation.framework */; };
 		591D3ECB1CFF7F5F0059011C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECA1CFF7F5F0059011C /* CoreMedia.framework */; };
 		591D3ECD1CFF7F9F0059011C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECC1CFF7F9F0059011C /* AssetsLibrary.framework */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		320070451E5984990098DF98 /* retrained_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = retrained_labels.txt; sourceTree = "<group>"; };
-		320070481E598FA50098DF98 /* optimized_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = optimized_graph.pb; sourceTree = "<group>"; };
+		3209A6BE1E5D2BD10045A1EF /* mmapped_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = mmapped_graph.pb; sourceTree = "<group>"; };
 		32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tensorflow.xcconfig; sourceTree = SOURCE_ROOT; };
 		591D3EC41CFF7F120059011C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC61CFF7F370059011C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -78,7 +78,7 @@
 		591D3ED61CFFA83A0059011C /* data */ = {
 			isa = PBXGroup;
 			children = (
-				320070481E598FA50098DF98 /* optimized_graph.pb */,
+				3209A6BE1E5D2BD10045A1EF /* mmapped_graph.pb */,
 				320070451E5984990098DF98 /* retrained_labels.txt */,
 			);
 			path = data;
@@ -204,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				592FF90D18EDD0DA00C164F8 /* MainStoryboard_iPhone.storyboard in Resources */,
-				320070491E598FEF0098DF98 /* optimized_graph.pb in Resources */,
+				3209A6BF1E5D2BD10045A1EF /* mmapped_graph.pb in Resources */,
 				320070471E5984990098DF98 /* retrained_labels.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

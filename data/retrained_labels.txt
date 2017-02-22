@@ -1,5 +1,5 @@
-autobus jelcz ogorek
+autobus jelcz ogurek
 fiat 125p
 fiat 126p maluch
 fso polonez
-syrena 103 105
+syrena 105

@@ -1,5 +1,10 @@
+autobus jelcz mzk
 autobus jelcz ogórek
 fiat 125p
 fiat 126p maluch
+fsc żuk
 fso polonez
+fso warszawa
+gazik
 syrena 105
+zsd nysa

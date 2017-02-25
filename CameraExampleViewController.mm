@@ -326,7 +326,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                 }
             }
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                [self setPredictionValues:newValues];
+                [self setPredictionValues:newValues smoothTransition:self.smoothTransitionSwitch.on];
             });
         }
     }
@@ -389,6 +389,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         LOG(FATAL) << "Couldn't load labels: " << labels_status;
     }
     [self setupAVCapture];
+    
+    self.smoothTransitionSwitch.on = YES;
 }
 
 - (void)viewDidUnload {
@@ -420,10 +422,18 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     return YES;
 }
 
-- (void)setPredictionValues:(NSDictionary *)newValues {
-    const float decayValue = 0.75f;
-    const float updateValue = 0.25f;
-    const float minimumThreshold = 0.01f;
+- (void)setPredictionValues:(NSDictionary *)newValues
+           smoothTransition:(BOOL)smoothTransition {
+
+    float decayValue = 0.75f;
+    float updateValue = 0.25f;
+    float minimumThreshold = 0.01f;
+    
+    if (!smoothTransition) {
+        decayValue = 0.0f;
+        updateValue = 1.0f;
+        minimumThreshold = 0.001f;
+    }
     
     NSMutableDictionary *decayedPredictionValues =
     [[NSMutableDictionary alloc] init];

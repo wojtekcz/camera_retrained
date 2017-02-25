@@ -44,4 +44,6 @@
 - (IBAction)takePicture:(id)sender;
 - (IBAction)switchCameras:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISwitch *smoothTransitionSwitch;
+
 @end

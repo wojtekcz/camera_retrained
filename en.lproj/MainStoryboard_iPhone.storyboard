@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +28,15 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZA-VG-0Yh">
+                                <rect key="frame" x="26" y="577" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smooth Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-xI-hbK">
+                                <rect key="frame" x="91" y="581" width="205" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD8-yH-eWH">
                                 <rect key="frame" x="27.5" y="628" width="320" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,16 +56,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="giC-xI-hbK" firstAttribute="centerY" secondItem="KZA-VG-0Yh" secondAttribute="centerY" id="1da-cr-tk3"/>
                             <constraint firstItem="iD8-yH-eWH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="2aA-zl-Vhb"/>
+                            <constraint firstItem="giC-xI-hbK" firstAttribute="leading" secondItem="KZA-VG-0Yh" secondAttribute="trailing" constant="16" id="Guc-sv-VUR"/>
                             <constraint firstItem="mJH-1N-ezS" firstAttribute="top" secondItem="iD8-yH-eWH" secondAttribute="bottom" constant="6" id="Q3k-8R-kDW"/>
+                            <constraint firstItem="iD8-yH-eWH" firstAttribute="top" secondItem="KZA-VG-0Yh" secondAttribute="bottom" constant="20" id="uHl-Ci-hb6"/>
+                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="zTX-lE-QNC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="previewView" destination="12" id="13"/>
+                        <outlet property="smoothTransitionSwitch" destination="KZA-VG-0Yh" id="SHh-q1-rhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="76.5" y="35.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -29,11 +29,17 @@
                                 <gestureRecognizers/>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZA-VG-0Yh">
-                                <rect key="frame" x="26" y="577" width="51" height="31"/>
+                                <rect key="frame" x="16" y="577" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smooth Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-xI-hbK">
-                                <rect key="frame" x="91" y="581" width="205" height="23.5"/>
+                                <rect key="frame" x="81" y="581" width="205" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference time: &lt;runTime&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-UI-f3j">
+                                <rect key="frame" x="16" y="548" width="201.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,11 +66,14 @@
                             <constraint firstItem="iD8-yH-eWH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="2aA-zl-Vhb"/>
                             <constraint firstItem="giC-xI-hbK" firstAttribute="leading" secondItem="KZA-VG-0Yh" secondAttribute="trailing" constant="16" id="Guc-sv-VUR"/>
                             <constraint firstItem="mJH-1N-ezS" firstAttribute="top" secondItem="iD8-yH-eWH" secondAttribute="bottom" constant="6" id="Q3k-8R-kDW"/>
+                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="top" secondItem="OJb-UI-f3j" secondAttribute="bottom" constant="8" id="aCd-HF-B2I"/>
+                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="OJb-UI-f3j" secondAttribute="leading" id="b2o-y0-5mC"/>
                             <constraint firstItem="iD8-yH-eWH" firstAttribute="top" secondItem="KZA-VG-0Yh" secondAttribute="bottom" constant="20" id="uHl-Ci-hb6"/>
-                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="zTX-lE-QNC"/>
+                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" id="zTX-lE-QNC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inferenceTimeLabel" destination="OJb-UI-f3j" id="RVa-w9-16t"/>
                         <outlet property="previewView" destination="12" id="13"/>
                         <outlet property="smoothTransitionSwitch" destination="KZA-VG-0Yh" id="SHh-q1-rhz"/>
                     </connections>

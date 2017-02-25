@@ -307,8 +307,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     if (tf_session.get()) {
         std::vector<tensorflow::Tensor> outputs;
+        NSDate *startDate = [NSDate date];
         tensorflow::Status run_status = tf_session->Run(
                                                         {{input_layer_name, image_tensor}}, {output_layer_name}, {}, &outputs);
+        NSTimeInterval runTime = -[startDate timeIntervalSinceNow];
+        
         if (!run_status.ok()) {
             LOG(ERROR) << "Running model failed:" << run_status;
         } else {
@@ -327,6 +330,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             }
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 [self setPredictionValues:newValues smoothTransition:self.smoothTransitionSwitch.on];
+                [self showRunTime:runTime];
             });
         }
     }
@@ -621,5 +625,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     utterance.rate = 0.75 * AVSpeechUtteranceDefaultSpeechRate;
     [synth speakUtterance:utterance];
 }
+
+- (void)showRunTime:(NSTimeInterval)runTime {
+    NSLog(@"runTime = %f", runTime);
+    self.inferenceTimeLabel.text = [NSString stringWithFormat:@"Inference time: %.2f", runTime];
+}
+
 
 @end

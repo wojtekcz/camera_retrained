@@ -45,5 +45,6 @@
 - (IBAction)switchCameras:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISwitch *smoothTransitionSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *inferenceTimeLabel;
 
 @end

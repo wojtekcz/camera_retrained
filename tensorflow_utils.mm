@@ -49,7 +49,7 @@ class IfstreamInputStream : public ::google::protobuf::io::CopyingInputStream {
       return -1;
     }
     ifs_.read(static_cast<char*>(buffer), size);
-    return ifs_.gcount();
+    return (int)ifs_.gcount();
   }
 
  private:
@@ -69,7 +69,7 @@ void GetTopN(const Eigen::TensorMap<Eigen::Tensor<float, 1, Eigen::RowMajor>,
                       std::greater<std::pair<float, int> > >
       top_result_pq;
 
-  const int count = prediction.size();
+  const int count = (int)prediction.size();
   for (int i = 0; i < count; ++i) {
     const float value = prediction(i);
 

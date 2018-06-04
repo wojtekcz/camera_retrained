@@ -255,6 +255,14 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 - (void)runCNNOnFrame:(CVPixelBufferRef)pixelBuffer {
     assert(pixelBuffer != NULL);
     
+    UIImage *img = [self imageFromPixelBuffer:pixelBuffer];
+    NSArray* preds = [self predictionFromImage:img];
+    NSLog(@"preds = %@", preds);
+    
+    // TODO: decode class name
+    // TODO: normalize probabilities
+    // TODO: show in UI
+
 //    OSType sourcePixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer);
 //    int doReverseChannels;
 //    if (kCVPixelFormatType_32ARGB == sourcePixelFormat) {
@@ -371,6 +379,63 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [super didReceiveMemoryWarning];
 }
 
+// https://stackoverflow.com/questions/3838696/convert-uiimage-to-cvpixelbufferref
+- (CVPixelBufferRef) pixelBufferFromCGImage: (CGImageRef) image
+{
+    NSDictionary *options = @{
+                              (NSString*)kCVPixelBufferCGImageCompatibilityKey : @YES,
+                              (NSString*)kCVPixelBufferCGBitmapContextCompatibilityKey : @YES,
+                              };
+    
+    CVPixelBufferRef pxbuffer = NULL;
+    CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault, CGImageGetWidth(image),
+                                          CGImageGetHeight(image), kCVPixelFormatType_32ARGB, (__bridge CFDictionaryRef) options,
+                                          &pxbuffer);
+    if (status!=kCVReturnSuccess) {
+        NSLog(@"Operation failed");
+    }
+    NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
+    
+    CVPixelBufferLockBaseAddress(pxbuffer, 0);
+    void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
+    
+    CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(pxdata, CGImageGetWidth(image),
+                                                 CGImageGetHeight(image), 8, 4*CGImageGetWidth(image), rgbColorSpace,
+                                                 kCGImageAlphaNoneSkipFirst);
+    NSParameterAssert(context);
+    
+    CGContextConcatCTM(context, CGAffineTransformMakeRotation(0));
+    CGAffineTransform flipVertical = CGAffineTransformMake( 1, 0, 0, -1, 0, CGImageGetHeight(image) );
+    CGContextConcatCTM(context, flipVertical);
+    CGAffineTransform flipHorizontal = CGAffineTransformMake( -1.0, 0.0, 0.0, 1.0, CGImageGetWidth(image), 0.0 );
+    CGContextConcatCTM(context, flipHorizontal);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, CGImageGetWidth(image),
+                                           CGImageGetHeight(image)), image);
+    CGColorSpaceRelease(rgbColorSpace);
+    CGContextRelease(context);
+    
+    CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
+    return pxbuffer;
+}
+
+// https://stackoverflow.com/questions/8072208/how-to-turn-a-cvpixelbuffer-into-a-uiimage
+- (UIImage *)imageFromPixelBuffer:(CVPixelBufferRef)pixelBuffer {
+    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+    
+    CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+    CGImageRef videoImage = [temporaryContext
+                             createCGImage:ciImage
+                             fromRect:CGRectMake(0, 0,
+                                                 CVPixelBufferGetWidth(pixelBuffer),
+                                                 CVPixelBufferGetHeight(pixelBuffer))];
+    
+    UIImage *uiImage = [UIImage imageWithCGImage:videoImage];
+    CGImageRelease(videoImage);
+    return uiImage;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     square = [UIImage imageNamed:@"squarePNG"];
@@ -394,9 +459,48 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //    if (!labels_status.ok()) {
 //        LOG(FATAL) << "Couldn't load labels: " << labels_status;
 //    }
+    
+    self.model = [[old_polish_cars_resnet50_95acc alloc] init];
+    
+    // TODO: test on simulator
+//    UIImage *myImage = [UIImage imageNamed:@"Jelcz.043.89000116_ddd.jpg"];
+//    NSArray *preds = [self predictionFromImage:myImage];
+//    NSLog(@"%@", preds);
+    
     [self setupAVCapture];
     
     self.smoothTransitionSwitch.on = YES;
+}
+
+- (NSArray *)predictionFromImage:(UIImage *)myImage {
+    CGSize size = CGSizeMake(224, 224);
+    
+    BOOL hasAlpha = false;
+    CGFloat scale = 1.0;
+    
+    UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale);
+    [myImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    CVPixelBufferRef pixelBuffer = [self pixelBufferFromCGImage:scaledImage.CGImage];
+    
+    NSError *err;
+    old_polish_cars_resnet50_95accOutput *output;
+    output = [self.model predictionFrom0:pixelBuffer error:&err];
+    MLMultiArray *multiArray = output._442;
+    NSLog(@"multiArray = %@", multiArray);
+    
+    NSMutableArray *preds = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i<=9; i++) {
+        float num = [multiArray objectAtIndexedSubscript:i].floatValue;
+        NSLog(@"i = %@, num = %@", @(i), @(num));
+        [preds addObject:@(num)];
+    }
+    
+    // TODO: free objects
+    return preds.copy;
 }
 
 - (void)viewDidUnload {

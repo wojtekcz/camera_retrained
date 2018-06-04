@@ -10,14 +10,14 @@
 		320070471E5984990098DF98 /* retrained_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 320070451E5984990098DF98 /* retrained_labels.txt */; };
 		3209A6BF1E5D2BD10045A1EF /* mmapped_graph.pb in Resources */ = {isa = PBXBuildFile; fileRef = 3209A6BE1E5D2BD10045A1EF /* mmapped_graph.pb */; };
 		325F69BF1E5E7F3C002515B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F69BE1E5E7F3C002515B0 /* Assets.xcassets */; };
+		32BA364E20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */; };
+		32BA365320C591E800246C4C /* Jelcz.043.89000116_ddd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32BA365220C591E800246C4C /* Jelcz.043.89000116_ddd.jpg */; };
 		591D3EC51CFF7F130059011C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3EC41CFF7F120059011C /* AVFoundation.framework */; };
 		591D3ECB1CFF7F5F0059011C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECA1CFF7F5F0059011C /* CoreMedia.framework */; };
 		591D3ECD1CFF7F9F0059011C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECC1CFF7F9F0059011C /* AssetsLibrary.framework */; };
 		591D3ECF1CFF7FCE0059011C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECE1CFF7FCE0059011C /* ImageIO.framework */; };
 		591D3ED21CFF85C30059011C /* ios_image_load.mm in Sources */ = {isa = PBXBuildFile; fileRef = 591D3ED11CFF85C30059011C /* ios_image_load.mm */; };
 		591D3ED51CFF85FD0059011C /* tensorflow_utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 591D3ED31CFF85FD0059011C /* tensorflow_utils.mm */; };
-		591D3EDF1CFFAD230059011C /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3EDD1CFFAD230059011C /* libprotobuf-lite.a */; };
-		591D3EE01CFFAD230059011C /* libprotobuf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3EDE1CFFAD230059011C /* libprotobuf.a */; };
 		592FF8B918ECBD7600C164F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592FF8B818ECBD7600C164F8 /* Foundation.framework */; };
 		592FF8BB18ECBD7600C164F8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592FF8BA18ECBD7600C164F8 /* CoreGraphics.framework */; };
 		592FF90218ECC66200C164F8 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 592FF90118ECC66200C164F8 /* main.mm */; };
@@ -32,6 +32,8 @@
 		3209A6BE1E5D2BD10045A1EF /* mmapped_graph.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = mmapped_graph.pb; sourceTree = "<group>"; };
 		325F69BE1E5E7F3C002515B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tensorflow.xcconfig; sourceTree = SOURCE_ROOT; };
+		32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = old_polish_cars_resnet50_95acc.mlmodel; path = ../../old_polish_cars_resnet50_95acc.mlmodel; sourceTree = "<group>"; };
+		32BA365220C591E800246C4C /* Jelcz.043.89000116_ddd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jelcz.043.89000116_ddd.jpg; path = ../../Jelcz.043.89000116_ddd.jpg; sourceTree = "<group>"; };
 		591D3EC41CFF7F120059011C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC61CFF7F370059011C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC81CFF7F500059011C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
@@ -42,8 +44,6 @@
 		591D3ED11CFF85C30059011C /* ios_image_load.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ios_image_load.mm; sourceTree = SOURCE_ROOT; };
 		591D3ED31CFF85FD0059011C /* tensorflow_utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tensorflow_utils.mm; sourceTree = SOURCE_ROOT; };
 		591D3ED41CFF85FD0059011C /* tensorflow_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tensorflow_utils.h; sourceTree = SOURCE_ROOT; };
-		591D3EDD1CFFAD230059011C /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "../../makefile/gen/protobuf_ios/lib/libprotobuf-lite.a"; sourceTree = "<group>"; };
-		591D3EDE1CFFAD230059011C /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = ../../makefile/gen/protobuf_ios/lib/libprotobuf.a; sourceTree = "<group>"; };
 		592FF8B518ECBD7600C164F8 /* CameraExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592FF8B818ECBD7600C164F8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		592FF8BA18ECBD7600C164F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,8 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5993C7721D5D4E980048CE6A /* Accelerate.framework in Frameworks */,
-				591D3EDF1CFFAD230059011C /* libprotobuf-lite.a in Frameworks */,
-				591D3EE01CFFAD230059011C /* libprotobuf.a in Frameworks */,
 				591D3ECF1CFF7FCE0059011C /* ImageIO.framework in Frameworks */,
 				591D3ECD1CFF7F9F0059011C /* AssetsLibrary.framework in Frameworks */,
 				591D3ECB1CFF7F5F0059011C /* CoreMedia.framework in Frameworks */,
@@ -107,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				5993C7711D5D4E980048CE6A /* Accelerate.framework */,
-				591D3EDD1CFFAD230059011C /* libprotobuf-lite.a */,
-				591D3EDE1CFFAD230059011C /* libprotobuf.a */,
 				591D3ECE1CFF7FCE0059011C /* ImageIO.framework */,
 				591D3ECC1CFF7F9F0059011C /* AssetsLibrary.framework */,
 				591D3ECA1CFF7F5F0059011C /* CoreMedia.framework */,
@@ -128,8 +124,10 @@
 				592FF90718EDD0DA00C164F8 /* en.lproj */,
 				592FF92118EE240200C164F8 /* CameraExampleAppDelegate.h */,
 				592FF92218EE240200C164F8 /* CameraExampleAppDelegate.m */,
+				32BA365220C591E800246C4C /* Jelcz.043.89000116_ddd.jpg */,
 				592FF92318EE240200C164F8 /* CameraExampleViewController.h */,
 				592FF92418EE240200C164F8 /* CameraExampleViewController.mm */,
+				32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */,
 				592FF90318ECCB8300C164F8 /* Info.plist */,
 				591D3ED01CFF85C30059011C /* ios_image_load.h */,
 				591D3ED11CFF85C30059011C /* ios_image_load.mm */,
@@ -208,6 +206,7 @@
 			files = (
 				592FF90D18EDD0DA00C164F8 /* MainStoryboard_iPhone.storyboard in Resources */,
 				3209A6BF1E5D2BD10045A1EF /* mmapped_graph.pb in Resources */,
+				32BA365320C591E800246C4C /* Jelcz.043.89000116_ddd.jpg in Resources */,
 				325F69BF1E5E7F3C002515B0 /* Assets.xcassets in Resources */,
 				320070471E5984990098DF98 /* retrained_labels.txt in Resources */,
 			);
@@ -220,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BA364E20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel in Sources */,
 				592FF90218ECC66200C164F8 /* main.mm in Sources */,
 				591D3ED21CFF85C30059011C /* ios_image_load.mm in Sources */,
 				592FF92618EE240200C164F8 /* CameraExampleViewController.mm in Sources */,
@@ -304,16 +304,12 @@
 					"$(TENSORFLOWROOT)/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(MAKEFILEROOT)/gen/lib",
 					"$(MAKEFILEROOT)/gen/protobuf_ios/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-force_load",
-					"$(MAKEFILEROOT)/gen/lib/libtensorflow-core.a",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.CameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -365,16 +361,12 @@
 					"$(TENSORFLOWROOT)/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(MAKEFILEROOT)/gen/lib",
 					"$(MAKEFILEROOT)/gen/protobuf_ios/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-force_load",
-					"$(MAKEFILEROOT)/gen/lib/libtensorflow-core.a",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.CameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

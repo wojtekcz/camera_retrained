@@ -14,6 +14,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#import "old_polish_cars_resnet50_95acc.h"
 
 #include <memory>
 //#include "tensorflow/core/public/session.h"
@@ -46,5 +47,11 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *smoothTransitionSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *inferenceTimeLabel;
+
+@property (strong, nonatomic) old_polish_cars_resnet50_95acc *model;
+
+- (CVPixelBufferRef)pixelBufferFromCGImage:(CGImageRef)image;
+- (NSArray *)predictionFromImage:(UIImage *)myImage;
+- (UIImage *)imageFromPixelBuffer:(CVPixelBufferRef)pixelBuffer;
 
 @end

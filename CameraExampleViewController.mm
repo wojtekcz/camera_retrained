@@ -358,11 +358,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
     
     CIContext *temporaryContext = [CIContext contextWithOptions:nil];
-    CGImageRef videoImage = [temporaryContext
-                             createCGImage:ciImage
-                             fromRect:CGRectMake(0, 0,
-                                                 CVPixelBufferGetWidth(pixelBuffer),
-                                                 CVPixelBufferGetHeight(pixelBuffer))];
+    CGImageRef videoImage = [temporaryContext createCGImage:ciImage fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer))];
     
     UIImage *uiImage = [UIImage imageWithCGImage:videoImage scale:1.0 orientation:UIImageOrientationLeft];
     CGImageRelease(videoImage);
@@ -378,7 +374,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     self.model = [[old_polish_cars_resnet50_95acc alloc] init];
     
-    // TODO: test on simulator
+    // for testing on simulator
 //    UIImage *myImage = [UIImage imageNamed:@"Jelcz.043.89000116_ddd.jpg"];
 //    NSArray *preds = [self predictionFromImage:myImage];
 //    NSLog(@"%@", preds);

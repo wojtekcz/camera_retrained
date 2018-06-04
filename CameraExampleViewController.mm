@@ -364,7 +364,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                  CVPixelBufferGetWidth(pixelBuffer),
                                                  CVPixelBufferGetHeight(pixelBuffer))];
     
-    UIImage *uiImage = [UIImage imageWithCGImage:videoImage];
+    UIImage *uiImage = [UIImage imageWithCGImage:videoImage scale:1.0 orientation:UIImageOrientationLeft];
     CGImageRelease(videoImage);
     return uiImage;
 }

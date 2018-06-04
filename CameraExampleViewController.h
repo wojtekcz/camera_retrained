@@ -49,6 +49,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *inferenceTimeLabel;
 
 @property (strong, nonatomic) old_polish_cars_resnet50_95acc *model;
+@property (strong, nonatomic) NSArray<NSString *> *classNames;
+
 
 - (CVPixelBufferRef)pixelBufferFromCGImage:(CGImageRef)image;
 - (NSArray *)predictionFromImage:(UIImage *)myImage;

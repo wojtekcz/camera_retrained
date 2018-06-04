@@ -12,6 +12,7 @@
 		325F69BF1E5E7F3C002515B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F69BE1E5E7F3C002515B0 /* Assets.xcassets */; };
 		32BA364E20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */; };
 		32BA365320C591E800246C4C /* Jelcz.043.89000116_ddd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32BA365220C591E800246C4C /* Jelcz.043.89000116_ddd.jpg */; };
+		32BA365520C5B69700246C4C /* old_polish_cars_resnet50_95acc_classes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32BA365420C5B69700246C4C /* old_polish_cars_resnet50_95acc_classes.txt */; };
 		591D3EC51CFF7F130059011C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3EC41CFF7F120059011C /* AVFoundation.framework */; };
 		591D3ECB1CFF7F5F0059011C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECA1CFF7F5F0059011C /* CoreMedia.framework */; };
 		591D3ECD1CFF7F9F0059011C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D3ECC1CFF7F9F0059011C /* AssetsLibrary.framework */; };
@@ -34,6 +35,7 @@
 		32A79FA11E5D1431008BBFF7 /* tensorflow.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tensorflow.xcconfig; sourceTree = SOURCE_ROOT; };
 		32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = old_polish_cars_resnet50_95acc.mlmodel; path = ../../old_polish_cars_resnet50_95acc.mlmodel; sourceTree = "<group>"; };
 		32BA365220C591E800246C4C /* Jelcz.043.89000116_ddd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jelcz.043.89000116_ddd.jpg; path = ../../Jelcz.043.89000116_ddd.jpg; sourceTree = "<group>"; };
+		32BA365420C5B69700246C4C /* old_polish_cars_resnet50_95acc_classes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = old_polish_cars_resnet50_95acc_classes.txt; path = ../../old_polish_cars_resnet50_95acc_classes.txt; sourceTree = "<group>"; };
 		591D3EC41CFF7F120059011C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC61CFF7F370059011C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		591D3EC81CFF7F500059011C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,6 +130,7 @@
 				592FF92318EE240200C164F8 /* CameraExampleViewController.h */,
 				592FF92418EE240200C164F8 /* CameraExampleViewController.mm */,
 				32BA364D20C57DC400246C4C /* old_polish_cars_resnet50_95acc.mlmodel */,
+				32BA365420C5B69700246C4C /* old_polish_cars_resnet50_95acc_classes.txt */,
 				592FF90318ECCB8300C164F8 /* Info.plist */,
 				591D3ED01CFF85C30059011C /* ios_image_load.h */,
 				591D3ED11CFF85C30059011C /* ios_image_load.mm */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				592FF90D18EDD0DA00C164F8 /* MainStoryboard_iPhone.storyboard in Resources */,
+				32BA365520C5B69700246C4C /* old_polish_cars_resnet50_95acc_classes.txt in Resources */,
 				3209A6BF1E5D2BD10045A1EF /* mmapped_graph.pb in Resources */,
 				32BA365320C591E800246C4C /* Jelcz.043.89000116_ddd.jpg in Resources */,
 				325F69BF1E5E7F3C002515B0 /* Assets.xcassets in Resources */,

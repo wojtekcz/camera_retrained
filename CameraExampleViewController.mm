@@ -381,7 +381,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     CGFloat scale = 1.0;
     
     UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale);
-    [myImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    float myimage_scale = size.width/myImage.size.width;
+    CGSize myimage_size = CGSizeMake(myimage_scale*myImage.size.width, myimage_scale*myImage.size.height);
+    float delta = (myimage_size.height - myimage_size.width) / 2;
+    [myImage drawInRect:CGRectMake(0, -delta, myimage_size.width, myimage_size.height)];
     UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

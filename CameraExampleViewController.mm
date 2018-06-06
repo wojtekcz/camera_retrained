@@ -147,7 +147,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext =
 - (IBAction)takePicture:(id)sender {
     if ([session isRunning]) {
         [session stopRunning];
-        [sender setTitle:@"Continue" forState:UIControlStateNormal];
+        [sender setTitle:@"Kontynuuj" forState:UIControlStateNormal];
         
         flashView = [[UIView alloc] initWithFrame:[previewView frame]];
         [flashView setBackgroundColor:[UIColor whiteColor]];
@@ -171,7 +171,7 @@ static const NSString *AVCaptureStillImageIsCapturingStillImageContext =
         
     } else {
         [session startRunning];
-        [sender setTitle:@"Freeze Frame" forState:UIControlStateNormal];
+        [sender setTitle:@"Stopklatka" forState:UIControlStateNormal];
     }
 }
 
@@ -644,7 +644,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void)showRunTime:(NSTimeInterval)runTime {
 //    NSLog(@"runTime = %f", runTime);
-    self.inferenceTimeLabel.text = [NSString stringWithFormat:@"Inference time: %.2f", runTime];
+    self.inferenceTimeLabel.text = [NSString stringWithFormat:@"Czas wnioskowania: %.2f", runTime];
 }
 
 

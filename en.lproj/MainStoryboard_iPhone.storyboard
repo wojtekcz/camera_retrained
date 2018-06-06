@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,28 +28,28 @@
                                 <gestureRecognizers/>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZA-VG-0Yh">
-                                <rect key="frame" x="16" y="577" width="51" height="31"/>
+                                <rect key="frame" x="16" y="583" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smooth Transition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giC-xI-hbK">
-                                <rect key="frame" x="81" y="581" width="205" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <rect key="frame" x="81" y="588.5" width="184.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inference time: &lt;runTime&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-UI-f3j">
-                                <rect key="frame" x="16" y="545.5" width="301.5" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <rect key="frame" x="16" y="558" width="271" height="21"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD8-yH-eWH">
                                 <rect key="frame" x="27.5" y="628" width="320" height="33"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="Opg-1k-gsj"/>
                                     <constraint firstAttribute="width" constant="320" id="Pd4-UQ-omG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <state key="normal" title="Freeze Frame">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,15 +59,15 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="giC-xI-hbK" firstAttribute="centerY" secondItem="KZA-VG-0Yh" secondAttribute="centerY" id="1da-cr-tk3"/>
                             <constraint firstItem="iD8-yH-eWH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="2aA-zl-Vhb"/>
                             <constraint firstItem="giC-xI-hbK" firstAttribute="leading" secondItem="KZA-VG-0Yh" secondAttribute="trailing" constant="16" id="Guc-sv-VUR"/>
                             <constraint firstItem="mJH-1N-ezS" firstAttribute="top" secondItem="iD8-yH-eWH" secondAttribute="bottom" constant="6" id="Q3k-8R-kDW"/>
-                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="top" secondItem="OJb-UI-f3j" secondAttribute="bottom" constant="8" id="aCd-HF-B2I"/>
+                            <constraint firstItem="KZA-VG-0Yh" firstAttribute="top" secondItem="OJb-UI-f3j" secondAttribute="bottom" constant="4" id="aCd-HF-B2I"/>
                             <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="OJb-UI-f3j" secondAttribute="leading" id="b2o-y0-5mC"/>
-                            <constraint firstItem="iD8-yH-eWH" firstAttribute="top" secondItem="KZA-VG-0Yh" secondAttribute="bottom" constant="20" id="uHl-Ci-hb6"/>
+                            <constraint firstItem="iD8-yH-eWH" firstAttribute="top" secondItem="KZA-VG-0Yh" secondAttribute="bottom" constant="14" id="uHl-Ci-hb6"/>
                             <constraint firstItem="KZA-VG-0Yh" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" id="zTX-lE-QNC"/>
                         </constraints>
                     </view>
@@ -83,9 +82,4 @@
             <point key="canvasLocation" x="76.5" y="35.5"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

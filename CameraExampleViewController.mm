@@ -20,8 +20,6 @@
 
 #include <sys/time.h>
 
-#include "tensorflow_utils.h"
-
 static const NSString *AVCaptureStillImageIsCapturingStillImageContext =
 @"AVCaptureStillImageIsCapturingStillImageContext";
 
@@ -514,7 +512,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     const float valueWidth = 48.0f;
     const float valueHeight = 26.0f;
     
-    const float labelWidth = 246.0f;
+    const float labelWidth = 336.0f;
     const float labelHeight = 26.0f;
     
     const float labelMarginX = 5.0f;
@@ -577,7 +575,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                        height:(float)height
                     alignment:(NSString *)alignment {
     NSString *const font = @"Menlo-Regular";
-    const float fontSize = 20.0f;
+    const float fontSize = 18.0f;
     
     const float marginSizeX = 5.0f;
     const float marginSizeY = 2.0f;
